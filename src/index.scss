@@ -1,13 +1,94 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Nunito");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+$primary: rgb(12, 180, 54);
+.Title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid gray;
+  h1 {
+    color: $primary;
+    font-weight: 500;
+  }
+  button {
+    padding: 10px 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background-color: $primary;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 200px;
+    &:hover {
+      box-shadow: inset 2px 4px 9px 0 #00000057;
+    }
+    &.copied {
+      box-shadow: none;
+      color: $primary;
+      background-color: white;
+      pointer-events: none;
+    }
+  }
+}
+
+.Sheet {
+  margin: 10px;
+  .grid {
+    // padding: 10px;
+    overflow: auto;
+    position: relative;
+  }
+
+  .Cell {
+    display: flex;
+    min-width: 100px;
+    max-width: 100px;
+    p {
+      text-align: center;
+      font-size: small;
+      color: gray;
+    }
+    * {
+      border: 0.5px solid grey;
+      padding: 0px 3px;
+      width: 100%;
+    }
+    &.nos {
+      background-color: rgb(238, 238, 238);
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      margin-right: 3px;
+      &#R0 {
+        transform: scaleY(0.9);
+        transform-origin: 0px 0px;
+        background-color: white;
+        * {
+          visibility: hidden;
+        }
+      }
+      &#column {
+        margin-right: 0;
+        margin-bottom: 3px;
+        z-index: 7;
+        position: static;
+      }
+    }
+    input:focus {
+      border: none;
+      outline: 3px solid $primary;
+      z-index: 5;
+    }
+  }
 }

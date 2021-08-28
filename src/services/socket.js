@@ -1,8 +1,7 @@
-
 import io from "socket.io-client";
-import config from '../config'
+import { SOCKET_URL } from "../config";
 
-const ENDPOINT = config.SOCKET_URL;
+const ENDPOINT = SOCKET_URL;
 const socket = io(ENDPOINT);
 
-export default socket
+export default socket;
