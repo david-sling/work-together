@@ -35,3 +35,8 @@ npm run dev
 
 - [Repository](https://github.com/david-sling/work-together-socket)
 - [Live](https://work-together-socket.herokuapp.com/)
+
+## WHAT I WILL CONTINUE WORKING ON AFTER SUBMISSION
+
+- Make data pesristant using a database
+- Change referenced values when references change
