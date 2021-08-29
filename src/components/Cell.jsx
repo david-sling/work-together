@@ -27,7 +27,10 @@ export default function Cell({
     try {
       str = str.replace(/\#\{([^#]+)\}/g, function (match, key) {
         const address = key.toUpperCase();
-        const val = sheet[address] || 0;
+        var val = sheet[address] || 0;
+        if (val.toString()[0] == "=") {
+          val = getCalc(val);
+        }
         var num = parseInt(val);
         num = isNaN(num) ? 0 : num;
         console.log({ address, val, key, num });
