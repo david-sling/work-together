@@ -133,6 +133,11 @@ a {
     // padding: 10px;
     overflow: auto;
     position: relative;
+    max-height: 80vh;
+    div:nth-child(1) {
+      position: sticky;
+      top: 0;
+    }
   }
 
   .Cell {

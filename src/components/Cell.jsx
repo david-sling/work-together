@@ -23,12 +23,14 @@ export default function Cell({
 
   const getCalc = (raw) => {
     var str = raw.split("=")[1];
+    console.log({ str });
     try {
       str = str.replace(/\#\{([^#]+)\}/g, function (match, key) {
-        const val = sheet[key] || 0;
+        const address = key.toUpperCase();
+        const val = sheet[address] || 0;
         var num = parseInt(val);
         num = isNaN(num) ? 0 : num;
-        console.log({ key, num });
+        console.log({ address, val, key, num });
         return num;
       });
       var result = stringMath(str);
