@@ -12,8 +12,8 @@ export default function Title() {
   return (
     <div className="Title">
       <h1>{id}</h1>
-      <button className={copied && "copied"} onClick={copyId}>
-        {copied ? "LINK COPIED" : "COPY LINK"}
+      <button className={copied ? "copied" : ""} onClick={copyId}>
+        <p>{copied ? "LINK COPIED" : "COPY LINK"}</p>
       </button>
     </div>
   );
