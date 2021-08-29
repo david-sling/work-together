@@ -13,6 +13,24 @@
   - Example: = #{r1c1} // prints value in R1C1
   - Example: = #{r1c1} + #{R2C2} // prints sum of values in R1C1 and R2C2
 
+## HOW TO RUN
+
+###### START CLIENT
+
+```
+git clone https://github.com/david-sling/work-together
+cd work-together
+npm start
+```
+
+###### START SERVER
+
+```
+git clone https://github.com/david-sling/work-together-socket
+cd work-together-socket
+npm run dev
+```
+
 ## SOCKET
 
 - [Repository](https://github.com/david-sling/work-together-socket)
