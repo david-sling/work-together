@@ -1,7 +1,7 @@
 # WORK TOGETHER
 
-[Click here to see live website](https://work-together.netlify.app)
-[See on Github](https://github.com/david-sling/work-together)
+- [Click here to see live website](https://work-together.netlify.app)
+- [See on Github](https://github.com/david-sling/work-together)
 
 ## FEATURES
 
@@ -31,7 +31,7 @@ cd work-together-socket
 npm run dev
 ```
 
-## SOCKET
+## SERVER DETAILS
 
 - [Repository](https://github.com/david-sling/work-together-socket)
 - [Live](https://work-together-socket.herokuapp.com/)
