@@ -12,6 +12,8 @@ export default function Cell({
   text,
   id: idN,
   style,
+  setActiveCell,
+  activeCell,
 }) {
   const { id } = useParams();
   const cellId = `R${row}C${column}`;
@@ -20,10 +22,19 @@ export default function Cell({
   const [showRaw, setShowRaw] = useState(false);
 
   const getCalc = (raw) => {
-    const str = raw.split("=")[1];
+    var str = raw.split("=")[1];
     try {
+      str = str.replace(/\#\{([^#]+)\}/g, function (match, key) {
+        const val = sheet[key] || 0;
+        var num = parseInt(val);
+        num = isNaN(num) ? 0 : num;
+        console.log({ key, num });
+        return num;
+      });
       var result = stringMath(str);
+      console.log({ calc: result });
     } catch (error) {
+      console.log({ raw });
       var result = raw;
     }
     return result;
@@ -31,10 +42,7 @@ export default function Cell({
 
   useEffect(() => {
     const isExp = raw[0] == "=" && raw.length > 1;
-    if (isExp) {
-      const result = getCalc(raw);
-      return setCalc(result);
-    }
+    if (isExp) return setCalc(getCalc(raw));
     setCalc(raw);
   }, [raw]);
 
@@ -55,7 +63,10 @@ export default function Cell({
         <p>{text}</p>
       ) : (
         <input
-          onFocus={() => setShowRaw(true)}
+          onFocus={() => {
+            setShowRaw(true);
+            setActiveCell({ row, column });
+          }}
           onBlur={() => setShowRaw(false)}
           value={showRaw ? raw : calc}
           onChange={changeText}
