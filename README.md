@@ -1,6 +1,7 @@
 # WORK TOGETHER
 
 [Click here to see live website](https://work-together.netlify.app)
+[See on Github](https://github.com/david-sling/work-together)
 
 ## FEATURES
 
