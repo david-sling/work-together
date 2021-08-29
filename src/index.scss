@@ -13,6 +13,21 @@ a {
   color: unset;
 }
 
+#button {
+  padding: 10px 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background-color: $primary;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 200px;
+  &:hover {
+    box-shadow: inset 2px 4px 9px 0 #00000057;
+  }
+}
+
 .Home {
   padding: 50px;
   display: flex;

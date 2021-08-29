@@ -2,6 +2,7 @@ import { Delete, Search } from "@material-ui/icons";
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { v4 as uuid } from "uuid";
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -31,6 +32,9 @@ export default function Home() {
           </button>
         </Link>
       </form>
+      <Link to={`/${uuid()}`}>
+        <button id="button">NEW FILE</button>
+      </Link>
       <div className="list">
         <h6>
           {list.length || "NO "} RECENT FILE{list.length == 1 ? "" : "S"}
